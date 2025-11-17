@@ -198,7 +198,12 @@ pre-commit run --all-files
 - Use meaningful variable and function names
 - Write docstrings for all public APIs (Google or NumPy style)
 - Code formatting is handled by Ruff formatter (replaces Black)
-- **Data projects**: Use `pandas` for data manipulation (avoid `polars`)
+
+**Preferred Python Libraries:**
+- **Data manipulation**: Use `pandas` (avoid `polars`)
+- **HTTP client**: Use `httpx` (prefer over `requests`)
+- **Data validation**: Use `pydantic` v2
+- **AWS Lambda**: Use `aws-lambda-powertools` (when building Lambda functions)
 
 ### JavaScript Style
 
