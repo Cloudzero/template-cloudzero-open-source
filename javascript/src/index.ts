@@ -18,5 +18,5 @@ export const VERSION = "0.1.0";
  * Example function for demonstration purposes.
  */
 export function greet(name: string): string {
-    return `Hello, ${name}!`;
+  return `Hello, ${name}!`;
 }

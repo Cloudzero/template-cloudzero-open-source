@@ -9,16 +9,16 @@
 import { greet, VERSION } from "../src/index";
 
 describe("Template Tests", () => {
-    it("should pass example test", () => {
-        expect(true).toBe(true);
-    });
+  it("should pass example test", () => {
+    expect(true).toBe(true);
+  });
 
-    it("should have version defined", () => {
-        expect(VERSION).toBeDefined();
-        expect(typeof VERSION).toBe("string");
-    });
+  it("should have version defined", () => {
+    expect(VERSION).toBeDefined();
+    expect(typeof VERSION).toBe("string");
+  });
 
-    it("should greet correctly", () => {
-        expect(greet("World")).toBe("Hello, World!");
-    });
+  it("should greet correctly", () => {
+    expect(greet("World")).toBe("Hello, World!");
+  });
 });
