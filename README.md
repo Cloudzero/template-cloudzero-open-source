@@ -20,10 +20,10 @@ thank you Auth0, we :heart: you all, and not just because you have a zero in you
 This repo can be cloned, modified, then re-purposed for new open source projects. It can also be used piecemeal to improve
 existing repos.
 
-### Copy README-sample.md to README.md
+### Copy README-template.md to README.md
 
-The core of open source repo quality is the `README.md` file that's displayed on the repo's homepage in Github. 
-The `README-sample.md` included here was collaboratively created by CloudZero's engineering team and community
+The core of open source repo quality is the `README.md` file that's displayed on the repo's homepage in Github.
+The `README-template.md` included here was collaboratively created by CloudZero's engineering team and community
 engineering team based on samples of high-quality README files around the web.
 
 Most sections within this file should be considered required, even if that section contains a link to a more relevant
@@ -51,7 +51,7 @@ The issue and PR templates contained in this repo are general guidelines for wha
 
 ### Update LICENSE
 
-See `README-sample.md` for guidelines.
+See `README-template.md` for guidelines.
 
 ### Modify .gitignore
 
