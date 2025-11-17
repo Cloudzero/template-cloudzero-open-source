@@ -144,15 +144,10 @@ uv run ruff check .
 uv run ruff check --fix .  # Auto-fix issues
 ```
 
-**Type checking with mypy:**
-```bash
-uv run mypy src/
-```
-
 **Run all checks:**
 ```bash
-# Format, lint, type check, and test
-uv run ruff format . && uv run ruff check . && uv run mypy src/ && uv run pytest
+# Format, lint, and test
+uv run ruff format . && uv run ruff check . && uv run pytest
 ```
 
 ### JavaScript Projects
@@ -280,17 +275,16 @@ All PRs must pass continuous integration checks before merging.
 
 Our CI pipeline runs:
 1. **Linting**: Code style and quality checks
-2. **Type checking**: Static type analysis
-3. **Tests**: Full test suite with coverage reporting
-4. **Security scanning**: Dependency vulnerability checks
-5. **Build verification**: Ensures project builds successfully
+2. **Tests**: Full test suite with coverage reporting
+3. **Security scanning**: Dependency vulnerability checks
+4. **Build verification**: Ensures project builds successfully
 
 ### Passing CI Checks
 
 To ensure your PR passes CI:
 
 1. Run all quality checks locally before pushing
-2. Fix any linting or type errors
+2. Fix any linting errors
 3. Ensure all tests pass
 4. Maintain or improve test coverage
 5. Resolve any security vulnerabilities in dependencies
