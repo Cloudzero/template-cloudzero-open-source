@@ -200,7 +200,7 @@ pre-commit run --all-files
 - Code formatting is handled by Ruff formatter (replaces Black)
 
 **Preferred Python Libraries:**
-- **Data manipulation**: Use `pandas` (avoid `polars`)
+- **Data manipulation**: Use `polars` (prefer over `pandas`)
 - **HTTP client**: Use `httpx` (prefer over `requests`)
 - **Data validation**: Use `pydantic` v2
 - **AWS Lambda**: Use `aws-lambda-powertools` (when building Lambda functions)

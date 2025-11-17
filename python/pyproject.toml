@@ -50,9 +50,9 @@ lint = [
     "ruff>=0.3.0",
     "mypy>=1.8",
 ]
-# For data-focused projects, prefer pandas over polars
+# For data-focused projects, prefer polars over pandas
 data = [
-    "pandas>=2.0",
+    "polars>=0.20.0",
 ]
 # For HTTP clients, prefer httpx over requests
 http = [
