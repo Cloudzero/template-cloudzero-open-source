@@ -9,6 +9,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: javascript
     strategy:
       matrix:
         node-version: ['18', '20', '22']
@@ -21,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: 'javascript/package-lock.json'
 
     - name: Install dependencies
       run: npm ci
