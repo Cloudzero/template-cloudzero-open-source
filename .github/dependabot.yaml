@@ -16,3 +16,10 @@ updates:
     labels:
       - "auto-approve"
     open-pull-requests-limit: 5
+  - package-ecosystem: "npm"
+    directory: "/javascript"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "auto-approve"
+    open-pull-requests-limit: 5
