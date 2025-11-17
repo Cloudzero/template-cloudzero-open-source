@@ -23,6 +23,7 @@ All code changes should include appropriate documentation:
 
 Before contributing, ensure you have:
 - Python 3.11 or higher (for Python projects)
+- [uv](https://docs.astral.sh/uv/) - Fast Python package manager (for Python projects)
 - Node.js 18+ and npm (for JavaScript projects)
 - Git configured with your GitHub account
 
@@ -40,13 +41,18 @@ Before contributing, ensure you have:
    git remote add upstream https://github.com/cloudzero/REPO_NAME.git
    ```
 
-4. Create a virtual environment and install dependencies:
+4. Install dependencies:
 
    **For Python projects:**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -e ".[dev]"
+   # Install uv if you haven't already
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+
+   # Sync dependencies (creates venv automatically)
+   uv sync
+
+   # Or install with dev dependencies
+   uv sync --extra dev
    ```
 
    **For JavaScript projects:**
@@ -91,16 +97,16 @@ We maintain high test coverage to ensure code quality and prevent regressions.
 **Python projects:**
 ```bash
 # Run all tests
-pytest
+uv run pytest
 
 # Run with coverage
-pytest --cov
+uv run pytest --cov
 
 # Run specific test file
-pytest tests/test_module.py
+uv run pytest tests/test_module.py
 
 # Run specific test
-pytest tests/test_module.py::test_function_name
+uv run pytest tests/test_module.py::test_function_name
 ```
 
 **JavaScript projects:**
@@ -127,26 +133,26 @@ We use automated tools to maintain code quality and consistency.
 
 ### Python Projects
 
-**Formatting with Black:**
+**Formatting with Ruff:**
 ```bash
-black .
+uv run ruff format .
 ```
 
 **Linting with Ruff:**
 ```bash
-ruff check .
-ruff check --fix .  # Auto-fix issues
+uv run ruff check .
+uv run ruff check --fix .  # Auto-fix issues
 ```
 
 **Type checking with mypy:**
 ```bash
-mypy src/
+uv run mypy src/
 ```
 
 **Run all checks:**
 ```bash
 # Format, lint, type check, and test
-black . && ruff check . && mypy src/ && pytest
+uv run ruff format . && uv run ruff check . && uv run mypy src/ && uv run pytest
 ```
 
 ### JavaScript Projects
@@ -191,6 +197,8 @@ pre-commit run --all-files
 - Maximum line length: 100 characters
 - Use meaningful variable and function names
 - Write docstrings for all public APIs (Google or NumPy style)
+- Code formatting is handled by Ruff formatter (replaces Black)
+- **Data projects**: Use `pandas` for data manipulation (avoid `polars`)
 
 ### JavaScript Style
 
@@ -238,7 +246,7 @@ If your project includes compiled assets:
 
 ```bash
 # Build distribution packages
-python -m build
+uv build
 
 # Build Docker images (if applicable)
 docker build -t project-name .
