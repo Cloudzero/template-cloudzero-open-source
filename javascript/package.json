@@ -17,7 +17,7 @@
   "homepage": "https://github.com/cloudzero/template-cloudzero-open-source#readme",
   "main": "index.js",
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=20.0.0",
     "npm": ">=9.0.0"
   },
   "scripts": {
@@ -36,7 +36,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.0.0",
+    "@types/node": "^22.0.0",
     "@typescript-eslint/eslint-plugin": "^8.53.0",
     "@typescript-eslint/parser": "^8.53.0",
     "eslint": "^9.0.0",
