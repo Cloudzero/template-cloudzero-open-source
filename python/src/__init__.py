@@ -1,8 +1,5 @@
-# Copyright (c) CloudZero - ALL RIGHTS RESERVED - PROPRIETARY AND CONFIDENTIAL
-# Unauthorized copying of this file and/or project, via any medium is strictly prohibited.
-# Direct all questions to legal@cloudzero.com
-#
-# CHANGELOG: 2025-11-17 - Initial creation (erik.peterson)
+#  SPDX-FileCopyrightText: Copyright (c) CloudZero, Inc. or its affiliates. All Rights Reserved.
+#  SPDX-License-Identifier: Apache-2.0
 
 """
 CloudZero Python Template Package.
