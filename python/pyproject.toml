@@ -37,20 +37,20 @@ Repository = "https://github.com/cloudzero/template-cloudzero-open-source"
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=9.0",
-    "pytest-cov>=4.1",
-    "ruff>=0.14.0",
+    "pytest>=9.1",
+    "pytest-cov>=7.1",
+    "ruff>=0.16.0",
 ]
 test = [
-    "pytest>=9.0",
-    "pytest-cov>=4.1",
+    "pytest>=9.1",
+    "pytest-cov>=7.1",
 ]
 lint = [
-    "ruff>=0.14.0",
+    "ruff>=0.16.0",
 ]
 # For data-focused projects, prefer polars over pandas
 data = [
-    "polars>=1.36.0",
+    "polars>=1.44.0",
 ]
 # For HTTP clients, prefer httpx over requests
 http = [
@@ -58,11 +58,11 @@ http = [
 ]
 # For data validation, use pydantic 2
 validation = [
-    "pydantic>=2.12.0",
+    "pydantic>=2.13.0",
 ]
 # For AWS Lambda projects, use aws-lambda-powertools
 aws-lambda = [
-    "aws-lambda-powertools>=3.24.0",
+    "aws-lambda-powertools>=3.34.0",
 ]
 
 [tool.pytest.ini_options]
@@ -124,7 +124,7 @@ known-first-party = ["your_package_name"]
 
 [tool.uv]
 dev-dependencies = [
-    "pytest>=9.0",
-    "pytest-cov>=4.1",
-    "ruff>=0.14.0",
+    "pytest>=9.1",
+    "pytest-cov>=7.1",
+    "ruff>=0.16.0",
 ]
