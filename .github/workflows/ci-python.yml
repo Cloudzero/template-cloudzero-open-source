@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,14 +20,15 @@ jobs:
       run:
         working-directory: python
     strategy:
+      fail-fast: false
       matrix:
         python-version: ['3.11', '3.12', '3.13']
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
 
     - name: Install uv
-      uses: astral-sh/setup-uv@v3
+      uses: astral-sh/setup-uv@v10.1.0
       with:
         enable-cache: true
 
@@ -28,7 +36,7 @@ jobs:
       run: uv python install ${{ matrix.python-version }}
 
     - name: Install dependencies
-      run: uv sync --extra dev
+      run: uv sync --extra dev --group dev
 
     - name: Check formatting with Ruff
       run: uv run ruff format --check .
@@ -40,7 +48,7 @@ jobs:
       run: uv run pytest --cov --cov-report=xml --cov-report=term --cov-fail-under=60
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v7
       with:
-        file: ./coverage.xml
+        files: python/coverage.xml
         fail_ci_if_error: false

@@ -1,3 +1,6 @@
+# GitHub may mark this workflow disabled_inactivity if it does not run for
+# a long time. Re-enable it from the Actions tab, or rely on GitHub's
+# default CodeQL setup (dynamic/github-code-scanning/codeql).
 name: CodeQL Security Scan
 
 on:
@@ -17,6 +20,7 @@ jobs:
       packages: read
       actions: read
       contents: read
+      # Required when the workflow is enabled; GitHub may disable it for inactivity.
 
     strategy:
       fail-fast: false
@@ -25,15 +29,15 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
 
     - name: Autobuild
-      uses: github/codeql-action/autobuild@v3
+      uses: github/codeql-action/autobuild@v4
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4

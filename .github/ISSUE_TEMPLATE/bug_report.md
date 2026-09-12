@@ -6,33 +6,43 @@ labels: ''
 assignees: ''
 
 ---
-**Please do not report security vulnerabilities here**. Please disclose all security issues to [security@cloudzero.com](mailto:security@cloudzero.com).
 
-**Thank you in advance for helping us to improve this project!** Please read through the template below and answer all relevant questions. Your additional work here is greatly appreciated and will help us respond as quickly as possible. For general support or usage questions, use [CloudZero Support](mailto:support@cloudzero.com). Finally, to avoid duplicates, please search existing Issues before submitting one here.
+# Bug report
 
-By submitting an Issue to this repository, you agree to the terms within the [CloudZero Code of Conduct](https://github.com/cloudzero/template-cloudzero-open-source/blob/master/CODE-OF-CONDUCT.md).
+**Please do not report security vulnerabilities here.** Follow
+[SECURITY.md](../../SECURITY.md) instead.
 
-### Description
+Thank you for helping us improve this project. Fill out the sections below so
+we can respond quickly. For usage questions, email
+[CloudZero Support](mailto:support@cloudzero.com). Search existing issues
+before opening a new one.
 
-> Provide a clear and concise description of the issue, including what you expected to happen.
+By submitting an issue you agree to the
+[CloudZero Code of Conduct](../../CODE-OF-CONDUCT.md).
 
-### Reproduction
+## Description
 
-> Detail the steps taken to reproduce this error, what was expected, and whether this issue can be reproduced consistently or if it is intermittent.
+> Provide a clear and concise description of the issue, including what you
+> expected to happen.
+
+## Reproduction
+
+> Detail the steps taken to reproduce this error, what was expected, and
+> whether this issue can be reproduced consistently or if it is intermittent.
 >
 > Where applicable, please include:
 >
 > - Code sample to reproduce the issue
-> - Log files (redact/remove sensitive information)
-> - Application settings (redact/remove sensitive information)
+> - Log files (redact or remove sensitive information)
+> - Application settings (redact or remove sensitive information)
 > - Screenshots
 
-### Environment
+## Environment
 
 > Please provide the following:
-
-- **Version of this project used:**
-- **Version of the platform or framework used, if applicable:**
-- **Other relevant versions (language, server software, OS, browser):**
-- **Cloud provider and cloud services used (EKS, K8S, EC2, Etc...)**
-- **Other modules/plugins/libraries that might be involved:**
+>
+> - **Version of this project used:**
+> - **Version of the platform or framework used, if applicable:**
+> - **Other relevant versions (language, server software, OS, browser):**
+> - **Cloud provider and cloud services used (EKS, Kubernetes, EC2, and so on)**
+> - **Other modules, plugins, or libraries that might be involved:**

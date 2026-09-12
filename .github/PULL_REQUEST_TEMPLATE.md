@@ -1,37 +1,40 @@
-By submitting a PR to this repository, you agree to the terms within the [CloudZero Code of Conduct](https://github.com/cloudzero/template-cloudzero-open-source/blob/master/CODE-OF-CONDUCT.md). Please see the [contributing guidelines](https://github.com/cloudzero/template-cloudzero-open-source/blob/master/CONTRIBUTING.md) for how to create and submit a high-quality PR for this repo.
+# Pull request
 
-### Description
+By submitting a PR to this repository, you agree to the
+[CloudZero Code of Conduct](CODE-OF-CONDUCT.md). See the
+[contributing guidelines](CONTRIBUTING.md) for how to create a high-quality PR.
 
-> Describe the purpose of this PR along with any background information and the impacts of the proposed change. For the benefit of the community, please do not assume prior context.
+## Description
+
+> Describe the purpose of this PR, any background, and the impact of the
+> change. Do not assume prior context.
 >
-> Provide details that support your chosen implementation, including: breaking changes, alternatives considered, changes to the API, etc.
+> Include breaking changes, alternatives considered, and API changes.
 >
-> If the UI is being changed, please provide screenshots.
+> If the UI is changing, add screenshots.
 
+## References
 
-### References
-
-> Include any links supporting this change such as a:
+> Link supporting context, such as:
 >
-> - GitHub Issue/PR number addressed or fixed
-> - StackOverflow post
-> - Support forum thread
-> - Related pull requests/issues from other repos
+> - A GitHub issue this PR addresses
+> - A related discussion or design doc
+> - Related pull requests from other repos
 >
-> If there are no references, simply delete this section.
+> If there are no references, delete this section.
 
-### Testing
+## Testing
 
-> Describe how this can be tested by reviewers. Be specific about anything not tested and reasons why. If this library has unit and/or integration testing, tests should be added for new functionality and existing tests should complete without errors.
+> Tell reviewers how to test the change. Call out anything you did not test
+> and why. Add unit or integration tests for new behavior.
 >
-> Please include any manual steps for testing end-to-end or functionality not covered by unit/integration tests.
->
-> Also include details of the environment this PR was developed in (language/platform/browser version).
+> Include manual steps for flows that tests do not cover, and the environment
+> you used (language, platform, browser).
 
-- [ ] This change adds test coverage for new/changed/fixed functionality
+- [ ] This change adds test coverage for new, changed, or fixed functionality
 
-### Checklist
+## Checklist
 
-- [ ] I have added documentation for new/changed functionality in this PR
+- [ ] I have added documentation for new or changed functionality
 - [ ] All active GitHub checks for tests, formatting, and security are passing
-- [ ] The correct base branch is being used, if not `main`
+- [ ] The correct base branch is being used (`main` unless otherwise required)

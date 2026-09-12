@@ -1,32 +1,52 @@
 # Security Policy
 
-## Reporting a Vulnerability
+## Supported versions
 
-The CloudZero team takes security issues seriously. We appreciate your efforts to responsibly disclose your findings.
+This template does not ship a versioned product. Downstream projects should
+replace this table with the versions they still patch.
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+| Version | Supported |
+| --- | --- |
+| Latest `main` | Yes |
 
-Instead, please report security vulnerabilities by emailing [security@cloudzero.com](mailto:security@cloudzero.com).
+## Reporting a vulnerability
 
-Please include the following information in your report:
+**Do not report security vulnerabilities through public GitHub issues,
+discussions, or pull requests.**
 
-- Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
-- Full paths of source file(s) related to the manifestation of the issue
-- The location of the affected source code (tag/branch/commit or direct URL)
+### Preferred: GitHub private vulnerability reporting
+
+If this repository has
+[private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/report-privately)
+enabled, use the **Security** tab → **Advisories** → **Report a vulnerability**
+(or open `/security/advisories/new` on this repo).
+
+That keeps the report attached to the project and lets maintainers collaborate
+on a draft advisory before public disclosure.
+
+### Fallback: email
+
+If private reporting is not enabled or you cannot use GitHub, email
+[security@cloudzero.com](mailto:security@cloudzero.com).
+
+### What to include
+
+- Type of issue (for example XSS, injection, or privilege escalation)
+- Affected version, tag, commit, or URL
+- Full paths of the relevant source files
 - Any special configuration required to reproduce the issue
-- Step-by-step instructions to reproduce the issue
-- Proof-of-concept or exploit code (if possible)
-- Impact of the issue, including how an attacker might exploit it
+- Step-by-step reproduction instructions
+- Proof of concept, if you can share one safely
+- Impact, including how an attacker might exploit the issue
+- Suggested mitigations, if you have them
 
-This information will help us triage your report more quickly.
+## Response process
 
-## Response Process
+After you submit a report, you can expect:
 
-After submitting a vulnerability report, you can expect:
-
-1. A response acknowledging your report
+1. An acknowledgment
 2. An assessment of the vulnerability and its impact
 3. Communication about the fix timeline
-4. Credit for your discovery (if desired) when the vulnerability is publicly disclosed
+4. Credit for your discovery (if you want it) when the issue is disclosed
 
-Thank you for helping keep CloudZero and our users safe!
+Thank you for helping keep CloudZero and our users safe.

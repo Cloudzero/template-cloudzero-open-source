@@ -1,7 +1,5 @@
-# Copyright CloudZero, Inc. or its affiliates. All Rights Reserved.
+# SPDX-FileCopyrightText: Copyright (c), CloudZero, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0
-
-version: '3.8'
 
 services:
   app:
@@ -15,16 +13,14 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      # Mount source code for development
-      - .:/app
-      # Preserve virtual environment
+      - ./python:/app
       - venv:/app/.venv
     command: python -m your_module
     restart: unless-stopped
 
-  # Example: Add database service if needed
+  # Example database service. Uncomment if you need it.
   # db:
-  #   image: postgres:15-alpine
+  #   image: postgres:17-alpine
   #   container_name: cloudzero-db
   #   environment:
   #     POSTGRES_DB: mydb

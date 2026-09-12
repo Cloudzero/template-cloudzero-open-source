@@ -6,24 +6,34 @@ labels: ''
 assignees: ''
 
 ---
-**Please do not report security vulnerabilities here**. Please disclose all security issues to [security@cloudzero.com](mailto:security@cloudzero.com).
 
-**Thank you in advance for helping us to improve this project!** Please read through the template below and answer all relevant questions. Your additional work here is greatly appreciated and will help us respond as quickly as possible. For general support or usage questions, use [CloudZero Support](mailto:support@cloudzero.com). Finally, to avoid duplicates, please search existing Issues before submitting one here.
+# Feature request
 
-By submitting an Issue to this repository, you agree to the terms within the [CloudZero Code of Conduct](https://github.com/cloudzero/template-cloudzero-open-source/blob/master/CODE-OF-CONDUCT.md).
+**Please do not report security vulnerabilities here.** Follow
+[SECURITY.md](../../SECURITY.md) instead.
 
-### Describe the problem you'd like to have solved
+Thank you for helping us improve this project. Fill out the sections below so
+we can respond quickly. For usage questions, email
+[CloudZero Support](mailto:support@cloudzero.com). Search existing issues
+before opening a new one.
 
-> A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+By submitting an issue you agree to the
+[CloudZero Code of Conduct](../../CODE-OF-CONDUCT.md).
 
-### Describe the ideal solution
+## Describe the problem you'd like to have solved
+
+> A clear and concise description of what the problem is. For example: I'm
+> always frustrated when [...]
+
+## Describe the ideal solution
 
 > A clear and concise description of what you want to happen.
 
-## Alternatives and current work-arounds
+## Alternatives and current workarounds
 
-> A clear and concise description of any alternatives you've considered or any work-arounds that are currently in place.
+> A clear and concise description of any alternatives you've considered or
+> any workarounds that are currently in place.
 
-### Additional context
+## Additional context
 
 > Add any other context or screenshots about the feature request here.

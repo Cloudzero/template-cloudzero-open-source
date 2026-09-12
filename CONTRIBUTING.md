@@ -1,17 +1,24 @@
 # Contribution
 
-Thank you for your interest in contributing! Please read [CloudZero's general contribution guidelines](GENERAL-CONTRIBUTING.md) before getting started.
+Thank you for your interest in contributing. Please read
+[CloudZero's general contribution guidelines](GENERAL-CONTRIBUTING.md) before
+getting started.
 
 ## Documentation
 
 All code changes should include appropriate documentation:
 
-- **Code-level documentation**: Add docstrings for all public functions, classes, and modules
-- **README updates**: Update the README.md if your changes affect installation, usage, or features
-- **Docs site**: If this project has external documentation, include a link to the corresponding docs PR
-- **CloudZero integration**: Include links to relevant [CloudZero documentation](https://docs.cloudzero.com/) where applicable
+- **Code-level documentation**: Add docstrings for all public functions,
+  classes, and modules
+- **README updates**: Update `README.md` if your changes affect installation,
+  usage, or features
+- **Docs site**: If this project has external documentation, include a link to
+  the corresponding docs PR
+- **CloudZero integration**: Link to relevant
+  [CloudZero documentation](https://docs.cloudzero.com/) where it helps
 
-**Documentation standards:**
+Documentation standards:
+
 - Aim for 100% documentation coverage for new public APIs
 - Use clear, concise language
 - Include code examples where helpful
@@ -22,102 +29,100 @@ All code changes should include appropriate documentation:
 ### Prerequisites
 
 Before contributing, ensure you have:
+
 - Python 3.11 or higher (for Python projects)
-- [uv](https://docs.astral.sh/uv/) - Fast Python package manager (for Python projects)
-- Node.js 18+ and npm (for JavaScript projects)
+- [uv](https://docs.astral.sh/uv/) (for Python projects)
+- Node.js 20 or higher and npm 9 or higher (for JavaScript projects)
 - Git configured with your GitHub account
+
+This template's CI currently tests Python 3.11–3.13 and Node.js 22, 24, and 26.
 
 ### Initial Setup
 
 1. Fork the repository on GitHub
 2. Clone your fork locally:
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
    cd REPO_NAME
    ```
 
 3. Add the upstream repository:
+
    ```bash
    git remote add upstream https://github.com/cloudzero/REPO_NAME.git
    ```
 
-4. Install dependencies:
+4. Install dependencies.
 
-   **For Python projects:**
+   For Python projects:
+
    ```bash
-   # Install uv if you haven't already
    curl -LsSf https://astral.sh/uv/install.sh | sh
-
-   # Sync dependencies (creates venv automatically)
-   uv sync
-
-   # Or install with dev dependencies
-   uv sync --extra dev
+   cd python
+   uv sync --extra dev --group dev
    ```
 
-   **For JavaScript projects:**
+   For JavaScript projects:
+
    ```bash
-   npm install
+   cd javascript
+   npm ci
    ```
 
-5. Create a new branch for your changes:
+5. Create a branch for your changes:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
-For more detailed installation steps, see the [README installation section](README.md#installation).
+For how to adopt this template in a new repo, see
+[Getting Started](README.md#getting-started).
 
 ## Testing
 
-We maintain high test coverage to ensure code quality and prevent regressions.
+We keep high test coverage to protect quality and catch regressions.
 
 ### Test Structure
 
 - Place tests in the `tests/` directory
-- Name test files with the pattern `test_*.py` (Python) or `*.test.js` (JavaScript)
-- Group related tests in test classes or describe blocks
-- Use descriptive test names that explain what is being tested
+- Name test files `test_*.py` (Python) or `*.test.ts` / `*.test.js`
+  (JavaScript)
+- Group related tests in classes or `describe` blocks
+- Use names that explain what is being tested
 
 ### Writing Tests
 
-**Python testing guidelines:**
+Python:
+
 - Use `pytest` for all tests
-- Follow the Arrange-Act-Assert pattern
-- Use fixtures for common test setup
+- Follow Arrange-Act-Assert
+- Use fixtures for shared setup
 - Mock external dependencies
 
-**JavaScript testing guidelines:**
-- Use Jest or your project's test framework
+JavaScript:
+
+- Use Jest (or the project's test runner)
 - Write unit tests for individual functions
 - Write integration tests for component interactions
-- Maintain test isolation
+- Keep tests isolated
 
 ### Running Tests
 
-**Python projects:**
+Python (from `python/`):
+
 ```bash
-# Run all tests
 uv run pytest
-
-# Run with coverage
 uv run pytest --cov
-
-# Run specific test file
 uv run pytest tests/test_module.py
-
-# Run specific test
 uv run pytest tests/test_module.py::test_function_name
 ```
 
-**JavaScript projects:**
+JavaScript:
+
 ```bash
-# Run all tests
 npm test
-
-# Run tests in watch mode
 npm test -- --watch
-
-# Run tests with coverage
 npm test -- --coverage
 ```
 
@@ -125,94 +130,81 @@ npm test -- --coverage
 
 - New code should have at least 80% test coverage
 - Critical paths should have 100% coverage
-- PRs that decrease overall coverage may be rejected unless justified
+- PRs that lower overall coverage may be rejected unless justified
 
 ## Code Quality Tools
 
-We use automated tools to maintain code quality and consistency.
+### Python
 
-### Python Projects
+From `python/`:
 
-**Formatting with Ruff:**
 ```bash
 uv run ruff format .
-```
-
-**Linting with Ruff:**
-```bash
 uv run ruff check .
-uv run ruff check --fix .  # Auto-fix issues
-```
-
-**Run all checks:**
-```bash
-# Format, lint, and test
+uv run ruff check --fix .
 uv run ruff format . && uv run ruff check . && uv run pytest
 ```
 
-### JavaScript Projects
+### JavaScript
 
-**Formatting with Prettier:**
 ```bash
 npm run format
-```
-
-**Linting with ESLint:**
-```bash
+npm run format:check
 npm run lint
-npm run lint:fix  # Auto-fix issues
-```
-
-**Type checking (if using TypeScript):**
-```bash
+npm run lint:fix
 npm run type-check
 ```
 
-### Pre-commit Hooks
+### Documentation
 
-We recommend using pre-commit hooks to catch issues before committing:
+From the repository root (requires
+[markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) and
+[lychee](https://github.com/lycheeverse/lychee)):
 
 ```bash
-# Install pre-commit
-pip install pre-commit
-
-# Install hooks
-pre-commit install
-
-# Run hooks manually
-pre-commit run --all-files
+npx markdownlint-cli2
+lychee --config lychee.toml './**/*.md'
 ```
+
+CI runs the same Markdown lint and link checks on every pull request.
+
+### Pre-commit hooks
+
+This template does not ship a `.pre-commit-config.yaml`. If you add one,
+install [pre-commit](https://pre-commit.com/) with pipx or uv and run
+`pre-commit install`.
 
 ## Code Style Guidelines
 
 ### Python Style
 
-- Follow [PEP 8](https://pep8.org/) style guidelines
-- Use type hints for function signatures
+- Follow [PEP 8](https://pep8.org/)
+- Use type hints on function signatures
 - Maximum line length: 100 characters
-- Use meaningful variable and function names
-- Write docstrings for all public APIs (Google or NumPy style)
-- Code formatting is handled by Ruff formatter (replaces Black)
+- Use meaningful names
+- Write docstrings for public APIs (Google or NumPy style)
+- Let the Ruff formatter handle layout
 
-**Preferred Python Libraries:**
-- **Data manipulation**: Use `polars` (prefer over `pandas`)
-- **HTTP client**: Use `httpx` (prefer over `requests`)
-- **Data validation**: Use `pydantic` v2
-- **AWS Lambda**: Use `aws-lambda-powertools` (when building Lambda functions)
+Preferred libraries in new CloudZero Python projects:
+
+- **Data**: `polars` (prefer over `pandas`)
+- **HTTP**: `httpx` (prefer over `requests`)
+- **Validation**: `pydantic` v2
+- **AWS Lambda**: `aws-lambda-powertools`
 
 ### JavaScript Style
 
-- Use ES6+ features
-- Prefer `const` over `let`, avoid `var`
-- Use meaningful variable and function names
-- Add JSDoc comments for complex functions
-- Follow the project's ESLint configuration
+- Use ES2015+ (and TypeScript where the project already does)
+- Prefer `const` over `let`; do not use `var`
+- Use meaningful names
+- Add JSDoc for non-obvious functions
+- Follow the project's ESLint config
 
 ### Commit Messages
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
+```text
 type(scope): subject
 
 body (optional)
@@ -220,17 +212,19 @@ body (optional)
 footer (optional)
 ```
 
-**Types:**
+Types:
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
-- `style`: Code style changes (formatting, etc.)
+- `style`: Formatting only
 - `refactor`: Code refactoring
 - `test`: Test changes
-- `chore`: Build process or auxiliary tool changes
+- `chore`: Build or tooling changes
 
-**Examples:**
-```
+Examples:
+
+```text
 feat(api): add support for new endpoint
 
 fix(auth): resolve token expiration issue
@@ -240,60 +234,48 @@ docs(readme): update installation instructions
 
 ## Assets Compilation
 
-### Python Projects
-
-If your project includes compiled assets:
+### Python
 
 ```bash
-# Build distribution packages
+cd python
 uv build
+```
 
-# Build Docker images (if applicable)
+From the repository root:
+
+```bash
 docker build -t project-name .
 ```
 
-### JavaScript Projects
-
-If your project requires asset compilation:
+### JavaScript
 
 ```bash
-# Build for production
 npm run build
-
-# Build for development
-npm run build:dev
-
-# Watch mode for development
-npm run watch
+npm run build:watch
 ```
 
 ## CI/CD Information
 
-All PRs must pass continuous integration checks before merging.
+Pull requests must pass CI before merge.
 
 ### GitHub Actions Checks
 
-Our CI pipeline runs:
-1. **Linting**: Code style and quality checks
-2. **Tests**: Full test suite with coverage reporting
-3. **Security scanning**: Dependency vulnerability checks
-4. **Build verification**: Ensures project builds successfully
+1. **JavaScript CI**: Prettier, ESLint, TypeScript `--noEmit`, and Jest with
+   coverage on Node.js 22, 24, and 26
+2. **Python CI**: Ruff format + lint, pytest with coverage on Python 3.11–3.13
+3. **Docs CI**: markdownlint-cli2 on all `*.md` files and lychee link checks
+4. **CodeQL**: Security scanning when that workflow is enabled on the repo
 
 ### Passing CI Checks
 
-To ensure your PR passes CI:
+1. Run the same checks locally before you push
+2. Fix lint and format errors
+3. Ensure tests pass and coverage holds
+4. Fix broken documentation links
+5. Resolve actionable dependency vulnerabilities
 
-1. Run all quality checks locally before pushing
-2. Fix any linting errors
-3. Ensure all tests pass
-4. Maintain or improve test coverage
-5. Resolve any security vulnerabilities in dependencies
-
-If CI fails:
-- Review the error logs in GitHub Actions
-- Fix issues locally
-- Push updates to your branch
-- CI will automatically re-run
+If CI fails, read the GitHub Actions log, fix the issue locally, and push.
+CI re-runs on the new commit.
 
 ## Pull Request Guidelines
 
@@ -301,36 +283,42 @@ If CI fails:
 
 - [ ] Code follows the project's style guidelines
 - [ ] All tests pass locally
-- [ ] New tests added for new functionality
-- [ ] Documentation updated (if applicable)
-- [ ] Commit messages follow conventional commits format
-- [ ] Branch is up to date with main/master
+- [ ] New tests cover new behavior
+- [ ] Documentation is updated when needed
+- [ ] Commit messages follow Conventional Commits
+- [ ] Branch is up to date with `main`
 
 ### PR Description
 
-Include in your PR description:
-- **Summary**: What changes does this PR introduce?
-- **Motivation**: Why are these changes needed?
-- **Testing**: How was this tested?
-- **Screenshots**: Include screenshots for UI changes
-- **Breaking changes**: Clearly mark any breaking changes
-- **Related issues**: Link to related GitHub issues
+Include:
+
+- **Summary**: What does this PR change?
+- **Motivation**: Why is the change needed?
+- **Testing**: How did you test it?
+- **Screenshots**: For user-visible UI changes
+- **Breaking changes**: Call these out explicitly
+- **Related issues**: Link related GitHub issues
 
 ### Review Process
 
-- PRs require at least one approval from maintainers
-- Address all reviewer feedback
+- PRs need at least one maintainer approval
+- Address reviewer feedback
 - Keep PRs focused and reasonably sized
-- Be responsive to comments and questions
-- Once approved, a maintainer will merge your PR
+- Respond to comments
+- A maintainer merges after approval
+
+Repos that use [CODEOWNERS](.github/CODEOWNERS) also require a review from
+the listed owners (this template uses
+`@cloudzero/open-source-maintainers`). Replace that team when you create a
+new project.
 
 ## Getting Help
 
-If you need help:
-- Check existing [GitHub Issues](../../issues)
-- Review the [README](README.md) documentation
-- Ask questions in PR comments
-- Contact the team at support@cloudzero.com
+- Check existing
+  [GitHub Issues](https://github.com/cloudzero/template-cloudzero-open-source/issues)
+- Review the [README](README.md)
+- Ask questions on the PR
+- Email [support@cloudzero.com](mailto:support@cloudzero.com)
 
 ## Additional Resources
 
@@ -339,4 +327,4 @@ If you need help:
 - [Security Policy](SECURITY.md)
 - [CloudZero Documentation](https://docs.cloudzero.com/)
 
-Thank you for contributing to make this project better!
+Thank you for contributing.

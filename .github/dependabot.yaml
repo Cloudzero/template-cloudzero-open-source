@@ -1,4 +1,4 @@
-# Reference: https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
+# https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference
 
 version: 2
 updates:
@@ -8,18 +8,44 @@ updates:
       interval: "weekly"
     labels:
       - "auto-approve"
+      - "dependencies"
     open-pull-requests-limit: 5
-  - package-ecosystem: pip
-    directory: "/"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "uv"
+    directory: "/python"
     schedule:
       interval: "weekly"
     labels:
       - "auto-approve"
+      - "dependencies"
     open-pull-requests-limit: 5
+    groups:
+      python:
+        patterns:
+          - "*"
+
   - package-ecosystem: "npm"
     directory: "/javascript"
     schedule:
       interval: "weekly"
     labels:
       - "auto-approve"
+      - "dependencies"
+    open-pull-requests-limit: 5
+    groups:
+      javascript:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "auto-approve"
+      - "dependencies"
     open-pull-requests-limit: 5
