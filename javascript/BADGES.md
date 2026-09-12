@@ -1,5 +1,7 @@
 # JavaScript repo badges
 
-[![NPM version](https://img.shields.io/npm/v/open-source-template.svg?style=flat-square)](https://npmjs.org/package/open-source-template)
+Replace the package name with your published npm package.
 
-[![Downloads](https://img.shields.io/npm/dm/template-cloudzero-open-source.svg?style=flat-square)](https://npmjs.org/package/template-cloudzero-open-source)
+[![NPM version](https://img.shields.io/npm/v/template-cloudzero-open-source.svg?style=flat-square)](https://www.npmjs.com/package/template-cloudzero-open-source)
+[![Downloads](https://img.shields.io/npm/dm/template-cloudzero-open-source.svg?style=flat-square)](https://www.npmjs.com/package/template-cloudzero-open-source)
+[![Node.js](https://img.shields.io/node/v/template-cloudzero-open-source.svg?style=flat-square)](https://nodejs.org/)

@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [ main, master ]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -13,6 +20,7 @@ jobs:
       run:
         working-directory: javascript
     strategy:
+      fail-fast: false
       matrix:
         node-version: ['22', '24', '26']
 
@@ -34,6 +42,9 @@ jobs:
 
     - name: Lint with ESLint
       run: npm run lint
+
+    - name: Type-check with TypeScript
+      run: npm run type-check
 
     - name: Run tests with coverage
       run: npm test -- --coverage --coverageThreshold='{"global":{"lines":60,"branches":60,"functions":60,"statements":60}}'

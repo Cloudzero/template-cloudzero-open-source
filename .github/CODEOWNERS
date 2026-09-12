@@ -1,21 +1,29 @@
-# CODEOWNERS file for CloudZero open source projects
+# CODEOWNERS for CloudZero open source projects
 #
-# Lines starting with '#' are comments.
 # Each line is a file pattern followed by one or more owners.
 # Owners can be @usernames, @org/team-names, or email addresses.
 #
-# For more information, see:
+# GitHub only enforces these reviews when branch protection (or rulesets)
+# require "Code owner reviews". That setting is what blocks merge on this
+# template until @cloudzero/open-source-maintainers approves.
+#
+# When you copy this file into a new repository:
+# 1. Confirm the team exists in the GitHub organization, or replace it.
+# 2. Do not invent extra internal team names here.
+# 3. Keep the default `*` owner so unmatched paths still have a reviewer.
+#
+# Docs:
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
 # Default owners for everything in the repo
 *       @cloudzero/open-source-maintainers
 
-# Python code
+# Python
 *.py @cloudzero/open-source-maintainers
 python/ @cloudzero/open-source-maintainers
 pyproject.toml @cloudzero/open-source-maintainers
 
-# JavaScript/TypeScript code
+# JavaScript / TypeScript
 *.js @cloudzero/open-source-maintainers
 *.ts @cloudzero/open-source-maintainers
 *.jsx @cloudzero/open-source-maintainers
@@ -23,7 +31,7 @@ pyproject.toml @cloudzero/open-source-maintainers
 javascript/ @cloudzero/open-source-maintainers
 package.json @cloudzero/open-source-maintainers
 
-# CI/CD configuration
+# CI/CD
 .github/workflows/ @cloudzero/open-source-maintainers
 .github/actions/ @cloudzero/open-source-maintainers
 
@@ -31,7 +39,7 @@ package.json @cloudzero/open-source-maintainers
 *.md @cloudzero/open-source-maintainers
 docs/ @cloudzero/open-source-maintainers
 
-# Docker configuration
+# Docker
 Dockerfile @cloudzero/open-source-maintainers
 docker-compose*.yml @cloudzero/open-source-maintainers
 .dockerignore @cloudzero/open-source-maintainers

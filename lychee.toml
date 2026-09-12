@@ -1,0 +1,32 @@
+# Link checker for README, contributing docs, and GitHub templates.
+# Keep the exclude list small: only local/private URLs and known placeholder hosts.
+
+max_redirects = 10
+max_retries = 3
+timeout = 20
+# 429 = rate-limited (GitHub/Shields). Retry handles most cases; accept avoids flaky CI.
+accept = [200, 206, 429]
+
+exclude_path = [
+  "node_modules",
+  "coverage",
+  "dist",
+  ".venv",
+  "htmlcov",
+]
+
+# Local, example, and placeholder URLs that are not live endpoints.
+# npmjs.com and some CDNs return 403 to automated checkers.
+exclude = [
+  '^https?://localhost',
+  '^https?://127\.0\.0\.1',
+  '^https?://example\.com',
+  '^https://github\.com/YOUR_USERNAME/',
+  '^https://github\.com/cloudzero/REPO_NAME',
+  'npmjs\.com',
+  'npmjs\.org',
+  '^mailto:support@cloudzero\.com',
+  '^mailto:security@cloudzero\.com',
+  '^mailto:community@cloudzero\.com',
+  '^mailto:legal@cloudzero\.com',
+]

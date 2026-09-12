@@ -138,6 +138,9 @@ dmypy.json
 # uv
 .uv/
 
+# JavaScript coverage (local test runs)
+javascript/coverage/
+
 # Node.js
 node_modules/
 .npm/

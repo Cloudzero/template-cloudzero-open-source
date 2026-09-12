@@ -1,16 +1,7 @@
-# Docs = https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package
+# https://docs.npmjs.com/cli/v11/using-npm/developers#keeping-files-out-of-your-package
 
-# Development files
-.github/
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Test files
+# Tests and coverage
 tests/
-test/
-__tests__/
 *.test.js
 *.test.ts
 *.spec.js
@@ -18,34 +9,25 @@ __tests__/
 coverage/
 .nyc_output/
 
-# Build and config files
+# Build and editor config
 tsconfig.json
 tsconfig.*.json
-.eslintrc*
+eslint.config.*
 .prettierrc*
+.prettierignore
 .editorconfig
 .gitignore
 .gitattributes
 
-# CI/CD
-.travis.yml
-.gitlab-ci.yml
-azure-pipelines.yml
-.circleci/
-
-# Documentation (unless you want to include it)
-docs/
-examples/
+# Documentation (keep README)
 *.md
 !README.md
 
-# Source files (if publishing built files only)
+# Source (publish compiled output from dist/ when you add a build)
 src/
 
-# Development dependencies
+# Dependencies and logs
 node_modules/
-
-# Misc
 .DS_Store
 *.log
 *.swp

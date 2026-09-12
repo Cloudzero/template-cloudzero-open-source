@@ -7,7 +7,8 @@ body:
     attributes:
       value: |
         **Please do not report security vulnerabilities here.**
-        Email [security@cloudzero.com](mailto:security@cloudzero.com) instead.
+        Follow [SECURITY.md](https://github.com/cloudzero/template-cloudzero-open-source/blob/main/SECURITY.md)
+        (GitHub private reporting or security@cloudzero.com).
 
         Thank you for helping us improve this project! Please describe your feature request.
 
@@ -79,7 +80,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/cloudzero/template-cloudzero-open-source/blob/master/CODE-OF-CONDUCT.md)
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/cloudzero/template-cloudzero-open-source/blob/main/CODE-OF-CONDUCT.md)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true

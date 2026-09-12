@@ -18,6 +18,7 @@ changelog:
         - fix
     - title: 📚 Documentation
       labels:
+        - type: documentation
         - documentation
         - docs
     - title: 🔧 Maintenance

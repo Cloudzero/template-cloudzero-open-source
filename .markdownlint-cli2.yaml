@@ -1,0 +1,20 @@
+# Markdownlint configuration for this template and for repos created from it.
+# Line length is left to editors; keep structure, lists, and headings consistent.
+
+config:
+  default: true
+  MD013: false
+  MD033: false
+  MD024:
+    siblings_only: true
+  # GitHub issue templates use YAML front matter (`title:` / `name:`).
+  MD025:
+    front_matter_title: ""
+
+ignores:
+  - "**/node_modules/**"
+  - "**/coverage/**"
+  - "**/dist/**"
+  - "**/.venv/**"
+  - "**/htmlcov/**"
+  - "**/.ruff_cache/**"
