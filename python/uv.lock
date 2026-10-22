@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 5
 requires-python = ">=3.11"
 
 [[package]]
@@ -482,6 +482,7 @@ dev = [
     { name = "ruff" },
 ]
 http = [
+    { name = "certifi" },
     { name = "httpx" },
 ]
 lint = [
@@ -505,6 +506,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "aws-lambda-powertools", marker = "extra == 'aws-lambda'", specifier = ">=3.34.0" },
+    { name = "certifi", marker = "extra == 'http'", specifier = ">=2026.10.19" },
     { name = "httpx", marker = "extra == 'http'", specifier = ">=0.28.0" },
     { name = "polars", marker = "extra == 'data'", specifier = ">=1.44.0" },
     { name = "pydantic", marker = "extra == 'validation'", specifier = ">=2.13.0" },

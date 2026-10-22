@@ -55,6 +55,8 @@ data = [
 # For HTTP clients, prefer httpx over requests
 http = [
     "httpx>=0.28.0",
+    # security pin CVE-2026-111943 (eMudhra); transitive via httpx
+    "certifi>=2026.10.19",
 ]
 # For data validation, use pydantic 2
 validation = [
